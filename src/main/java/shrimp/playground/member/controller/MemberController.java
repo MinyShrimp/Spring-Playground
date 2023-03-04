@@ -7,6 +7,7 @@ import shrimp.playground.member.director.MemberDirector;
 import shrimp.playground.member.dto.request.AddRequest;
 import shrimp.playground.member.dto.request.DeleteRequest;
 import shrimp.playground.member.dto.response.AddResponse;
+import shrimp.playground.member.dto.response.DeleteResponse;
 import shrimp.playground.member.service.MemberService;
 
 @RestController
@@ -25,10 +26,12 @@ public class MemberController {
     }
 
     @DeleteMapping
-    public String deleteMember(
+    public DeleteResponse deleteMember(
             @Valid @RequestBody DeleteRequest dto
     ) {
         String name = memberService.deleteMember(dto.getMemberId());
-        return "good bye [" + name + "] ...";
+        return new DeleteResponse(
+                name, "good bye [" + name + "] ..."
+        );
     }
 }
