@@ -5,21 +5,22 @@ import shrimp.playground.dynamicdoc.types.GeneralMetaData;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Tag {
+public class GeneralTag {
 
     private final GeneralMetaData metaData;
-    private final List<Tag> children;
+    private final List<GeneralTag> children;
 
-    private Tag(GeneralMetaData metaData) {
+    public GeneralTag(GeneralMetaData metaData) {
         this.metaData = metaData;
         this.children = new LinkedList<>();
     }
 
-    public static Tag builder(GeneralMetaData metaData) {
-        return new Tag(metaData);
+    public GeneralTag(String name) {
+        this.metaData = GeneralMetaData.defaultGeneralMetaData(name);
+        this.children = new LinkedList<>();
     }
 
-    public Tag addChild(Tag child) {
+    public GeneralTag addChild(GeneralTag child) {
         this.children.add(child);
         return this;
     }
@@ -32,12 +33,12 @@ public class Tag {
         }
 
         if (metaData.getClassName() != null) {
-            builder.append("id=\"").append(metaData.getClassName()).append("\" ");
+            builder.append("class=\"").append(metaData.getClassName()).append("\" ");
         }
 
         builder.append(">");
 
-        for (Tag child : children) {
+        for (GeneralTag child : children) {
             builder.append(child.build());
         }
 

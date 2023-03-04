@@ -1,4 +1,4 @@
-package shrimp.playground.dynamicdoc.component;
+package shrimp.playground.dynamicdoc.fixed;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,7 @@ class HtmlBuilderTest {
 
     @Test
     void buildTest1() {
-        String html = HtmlBuilder.build(
+        HtmlBuilder builder = new HtmlBuilder(
                 MetaDataBuilder.builder()
                         .lang(Locale.KOREA)
                         .charset("UTF-8")
@@ -22,14 +22,14 @@ class HtmlBuilderTest {
                         .build()
         );
 
-        assertThat(html).isEqualTo(
-                "<!DOCTYPE HTML><html lang=\"ko_KR\"><head ><title>테스트</title><meta charset=\"UTF-8\"></head><body ></body></html>"
+        assertThat(builder.build()).isEqualTo(
+                "<!DOCTYPE HTML><html lang=\"ko_KR\"><head ><title>테스트</title><meta charset=\"UTF-8\"></head><body></body></html>"
         );
     }
 
     @Test
     void buildTest2() {
-        String html = HtmlBuilder.build(
+        HtmlBuilder builder = new HtmlBuilder(
                 MetaDataBuilder.builder()
                         .lang(Locale.KOREA)
                         .charset("UTF-8")
@@ -40,19 +40,19 @@ class HtmlBuilderTest {
                         .build()
         );
 
-        assertThat(html).isEqualTo(
-                "<!DOCTYPE HTML><html lang=\"ko_KR\"><head ><title>테스트</title><meta charset=\"UTF-8\"><meta name=\"author\" content=\"새우\"><meta name=\"keywords\" content=\"키워드\"><meta name=\"description\" content=\"설명\"></head><body ></body></html>"
+        assertThat(builder.build()).isEqualTo(
+                "<!DOCTYPE HTML><html lang=\"ko_KR\"><head ><title>테스트</title><meta charset=\"UTF-8\"><meta name=\"author\" content=\"새우\"><meta name=\"keywords\" content=\"키워드\"><meta name=\"description\" content=\"설명\"></head><body></body></html>"
         );
     }
 
     @Test
     void noBuildTest() {
-        String html = HtmlBuilder.build(
+        HtmlBuilder builder = new HtmlBuilder(
                 MetaDataBuilder.builder().build()
         );
 
-        assertThat(html).isEqualTo(
-                "<!DOCTYPE HTML><html ><head ></head><body ></body></html>"
+        assertThat(builder.build()).isEqualTo(
+                "<!DOCTYPE HTML><html ><head ></head><body></body></html>"
         );
     }
 }

@@ -11,4 +11,5 @@ public class MetaData {
 
     private String id;
     private String className;
+    private String style;
 }

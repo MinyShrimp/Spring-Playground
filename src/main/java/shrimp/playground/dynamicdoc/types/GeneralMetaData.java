@@ -8,9 +8,13 @@ import lombok.Setter;
 public class GeneralMetaData extends MetaData {
     private String name;
 
-    GeneralMetaData(String id, String className, String name) {
-        super(id, className);
+    public GeneralMetaData(String id, String className, String style, String name) {
+        super(id, className, style);
         this.name = name;
+    }
+
+    public static GeneralMetaData defaultGeneralMetaData(String name) {
+        return new GeneralMetaData(null, null, null, name);
     }
 
     @Override

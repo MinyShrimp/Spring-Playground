@@ -1,4 +1,4 @@
-package shrimp.playground.dynamicdoc.component;
+package shrimp.playground.dynamicdoc.fixed;
 
 
 import shrimp.playground.dynamicdoc.types.Components;

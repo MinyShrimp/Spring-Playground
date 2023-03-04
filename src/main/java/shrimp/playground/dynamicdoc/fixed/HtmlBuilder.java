@@ -1,13 +1,21 @@
-package shrimp.playground.dynamicdoc.component;
+package shrimp.playground.dynamicdoc.fixed;
 
+import lombok.RequiredArgsConstructor;
+import shrimp.playground.dynamicdoc.TagProcess;
 import shrimp.playground.dynamicdoc.types.Components;
 import shrimp.playground.dynamicdoc.types.HeadMetaData;
 
+@RequiredArgsConstructor
 public class HtmlBuilder {
+    private final HeadMetaData headMetaData;
+    private final TagProcess tagProcess;
 
-    public static String build(
-            HeadMetaData headMetaData
-    ) {
+    public HtmlBuilder(HeadMetaData headMetaData) {
+        this.headMetaData = headMetaData;
+        this.tagProcess = () -> "";
+    }
+
+    public String build() {
         //<!DOCTYPE html><html lang="ko">
         StringBuilder builder = new StringBuilder(Components.DOCTYPE).append(Components.HTMLSTART);
 
@@ -19,7 +27,8 @@ public class HtmlBuilder {
         builder.append(">").append(HeadBuilder.build(headMetaData));
 
         // <body> </body>
-        builder.append(BodyBuilder.build());
+        BodyBuilder body = new BodyBuilder(tagProcess);
+        builder.append(body.build());
 
         // </html>
         builder.append(Components.HTMLEND);

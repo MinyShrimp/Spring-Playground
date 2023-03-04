@@ -12,7 +12,7 @@ public interface Components {
 
     String HEADEND = "</head>";
 
-    String BODYSTART = "<body ";
+    String BODYSTART = "<body>";
 
     String BODYEND = "</body>";
 }

@@ -47,11 +47,6 @@ public class HeadMetaData {
             return this;
         }
 
-        public MetaDataBuilder metas(Map<Meta, String> metas) {
-            this.metas = metas;
-            return this;
-        }
-
         public MetaDataBuilder addMeta(Meta key, String value) {
             this.metas.put(key, value);
             return this;
