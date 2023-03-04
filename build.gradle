@@ -23,10 +23,6 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    snippetsDir = file('build/generated-snippets')
-}
-
 dependencies {
     // Spring Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -62,17 +58,30 @@ dependencies {
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
 
+ext {
+    snippetsDir = file('build/generated-snippets')
+}
+
 test {
-    outputs.dir snippetsDir
     useJUnitPlatform()
+    outputs.dir snippetsDir
 }
 
 asciidoctor {
+    forkOptions {
+        jvmArgs('--add-opens', 'java.base/sun.nio.ch=ALL-UNNAMED')
+        jvmArgs('--add-opens', 'java.base/java.io=ALL-UNNAMED')
+    }
     inputs.dir snippetsDir
     configurations 'asciidoctorExt'
     dependsOn test
 }
 
-clean {
-    delete file('src/main/generated')
+bootJar {
+    dependsOn asciidoctor
+
+    copy {
+        from asciidoctor.outputDir
+        into "src/main/resources/static/docs"
+    }
 }

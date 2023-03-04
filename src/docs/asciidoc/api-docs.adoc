@@ -1,0 +1,18 @@
+= Spring REST Docs
+:toc: left
+:toclevels: 2
+:sectlinks:
+
+[[resources-Member]]
+== 회원
+
+[[resources-post-addMember]]
+=== 회원 가입
+
+==== HTTP request
+
+include::{snippets}/post-addMember/http-request.adoc[]
+
+==== HTTP response
+
+include::{snippets}/post-addMember/http-response.adoc[]
