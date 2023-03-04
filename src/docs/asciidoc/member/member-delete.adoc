@@ -1,0 +1,41 @@
+= Playground APIs
+:toc: left
+:toclevels: 2
+
+== 회원 탈퇴 API
+
+=== Request
+
+==== Curl
+
+include::{snippets}/delete-member/curl-request.adoc[]
+
+==== HTTP
+
+include::{snippets}/delete-member/http-request.adoc[]
+
+==== HTTPie
+
+include::{snippets}/delete-member/httpie-request.adoc[]
+
+==== Body
+
+include::{snippets}/delete-member/request-body.adoc[]
+
+==== Field
+
+include::{snippets}/delete-member/request-fields.adoc[]
+
+=== Response
+
+==== HTTP
+
+include::{snippets}/delete-member/http-response.adoc[]
+
+==== Field
+
+include::{snippets}/delete-member/response-fields.adoc[]
+
+==== Body
+
+include::{snippets}/delete-member/response-body.adoc[]

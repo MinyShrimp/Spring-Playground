@@ -1,0 +1,12 @@
+= Playground APIs
+:toc: left
+:toclevels: 2
+:version: 0.0.1
+
+== 플레이 그라운드 API Docs
+
+* 제작자 : ksk7584@gmail.com
+
+== 회원
+
+link: http://localhost:8080/docs/member/info[회원]
