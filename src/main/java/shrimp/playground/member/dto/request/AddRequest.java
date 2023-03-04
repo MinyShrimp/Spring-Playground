@@ -1,4 +1,4 @@
-package shrimp.playground.member.dto;
+package shrimp.playground.member.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 
 @Getter
-public class AddRequestDto {
+public class AddRequest {
 
     @NotBlank
     private final String name;
@@ -20,7 +20,7 @@ public class AddRequestDto {
     private final String password;
 
     @JsonCreator
-    public AddRequestDto(
+    public AddRequest(
             @JsonProperty("name") String name,
             @JsonProperty("email") String email,
             @JsonProperty("password") String password

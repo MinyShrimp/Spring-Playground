@@ -1,4 +1,4 @@
-package shrimp.playground.member.dto;
+package shrimp.playground.member.dto.response;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Getter
 @RequiredArgsConstructor
-public class AddResponseDto {
+public class AddResponse {
 
     private final String name;
 

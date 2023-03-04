@@ -4,9 +4,9 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import shrimp.playground.member.director.MemberDirector;
-import shrimp.playground.member.dto.AddRequestDto;
-import shrimp.playground.member.dto.AddResponseDto;
-import shrimp.playground.member.dto.DeleteRequest;
+import shrimp.playground.member.dto.request.AddRequest;
+import shrimp.playground.member.dto.request.DeleteRequest;
+import shrimp.playground.member.dto.response.AddResponse;
 import shrimp.playground.member.service.MemberService;
 
 @RestController
@@ -16,8 +16,8 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/add")
-    public AddResponseDto addMember(
-            @Valid @RequestBody AddRequestDto dto
+    public AddResponse addMember(
+            @Valid @RequestBody AddRequest dto
     ) {
         return MemberDirector.entityToAddResponse(
                 memberService.addMember(dto)

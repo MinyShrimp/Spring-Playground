@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import shrimp.playground.member.dto.ExceptionResponse;
+import shrimp.playground.member.dto.response.ExceptionResponse;
 import shrimp.playground.member.exception.NotFoundMemberException;
 
 @Slf4j

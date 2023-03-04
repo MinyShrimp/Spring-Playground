@@ -1,4 +1,4 @@
-package shrimp.playground.member.dto;
+package shrimp.playground.member.dto.response;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

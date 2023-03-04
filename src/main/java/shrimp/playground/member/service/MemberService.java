@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import shrimp.playground.member.director.MemberDirector;
-import shrimp.playground.member.dto.AddRequestDto;
+import shrimp.playground.member.dto.request.AddRequest;
 import shrimp.playground.member.entity.MemberEntity;
 import shrimp.playground.member.exception.NotFoundMemberException;
 import shrimp.playground.member.repository.MemberRepository;
@@ -21,10 +21,10 @@ public class MemberService {
 
     @Transactional
     public MemberEntity addMember(
-            AddRequestDto dto
+            AddRequest body
     ) {
         return memberRepository.save(
-                MemberDirector.addRequestToEntity(dto)
+                MemberDirector.addRequestToEntity(body)
         );
     }
 

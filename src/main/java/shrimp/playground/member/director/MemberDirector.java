@@ -1,7 +1,7 @@
 package shrimp.playground.member.director;
 
-import shrimp.playground.member.dto.AddRequestDto;
-import shrimp.playground.member.dto.AddResponseDto;
+import shrimp.playground.member.dto.request.AddRequest;
+import shrimp.playground.member.dto.response.AddResponse;
 import shrimp.playground.member.entity.MemberEntity;
 
 public class MemberDirector {
@@ -9,16 +9,16 @@ public class MemberDirector {
     private MemberDirector() {
     }
 
-    public static MemberEntity addRequestToEntity(AddRequestDto dto) {
+    public static MemberEntity addRequestToEntity(AddRequest body) {
         return new MemberEntity(
-                dto.getName(),
-                dto.getEmail(),
-                dto.getPassword()
+                body.getName(),
+                body.getEmail(),
+                body.getPassword()
         );
     }
 
-    public static AddResponseDto entityToAddResponse(MemberEntity entity) {
-        return new AddResponseDto(
+    public static AddResponse entityToAddResponse(MemberEntity entity) {
+        return new AddResponse(
                 entity.getName(),
                 entity.getEmail(),
                 entity.getCreateOn()

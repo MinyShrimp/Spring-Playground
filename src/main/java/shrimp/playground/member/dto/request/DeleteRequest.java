@@ -1,4 +1,4 @@
-package shrimp.playground.member.dto;
+package shrimp.playground.member.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
