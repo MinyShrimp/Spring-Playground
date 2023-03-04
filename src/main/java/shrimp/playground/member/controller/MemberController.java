@@ -1,12 +1,12 @@
 package shrimp.playground.member.controller;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import shrimp.playground.member.director.MemberDirector;
 import shrimp.playground.member.dto.AddRequestDto;
 import shrimp.playground.member.dto.AddResponseDto;
+import shrimp.playground.member.dto.DeleteRequest;
 import shrimp.playground.member.service.MemberService;
 
 @RestController
@@ -26,9 +26,9 @@ public class MemberController {
 
     @DeleteMapping
     public String deleteMember(
-            @NotBlank @RequestParam String memberId
+            @Valid @RequestBody DeleteRequest dto
     ) {
-        memberService.deleteMember(memberId);
-        return "good bye..";
+        String name = memberService.deleteMember(dto.getMemberId());
+        return "good bye [" + name + "] ...";
     }
 }

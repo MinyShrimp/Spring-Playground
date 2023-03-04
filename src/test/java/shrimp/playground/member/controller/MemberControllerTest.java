@@ -39,4 +39,9 @@ public class MemberControllerTest {
                         )
                 ));
     }
+
+    @Test
+    void delete() throws Exception {
+        
+    }
 }

@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import shrimp.playground.member.director.MemberDirector;
 import shrimp.playground.member.dto.AddRequestDto;
 import shrimp.playground.member.entity.MemberEntity;
+import shrimp.playground.member.exception.NotFoundMemberException;
 import shrimp.playground.member.repository.MemberRepository;
 
 import java.util.Optional;
@@ -28,10 +29,13 @@ public class MemberService {
     }
 
     @Transactional
-    public void deleteMember(
+    public String deleteMember(
             String memberId
     ) {
-        Optional<MemberEntity> findMember = memberRepository.findById(UUID.fromString(memberId));
-        findMember.ifPresent(memberRepository::delete);
+        Optional<MemberEntity> optionalMember = memberRepository.findById(UUID.fromString(memberId));
+        MemberEntity member = optionalMember.orElseThrow(NotFoundMemberException::new);
+        memberRepository.delete(member);
+
+        return member.getName();
     }
 }
