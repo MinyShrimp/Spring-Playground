@@ -1,11 +1,12 @@
 package shrimp.playground.member.dto;
 
 import lombok.Getter;
-import shrimp.playground.member.entity.MemberEntity;
+import lombok.RequiredArgsConstructor;
 
 import java.sql.Timestamp;
 
 @Getter
+@RequiredArgsConstructor
 public class AddResponseDto {
 
     private final String name;
@@ -13,12 +14,4 @@ public class AddResponseDto {
     private final String email;
 
     private final Timestamp createOn;
-
-    public AddResponseDto(
-            MemberEntity entity
-    ) {
-        this.name = entity.getName();
-        this.email = entity.getEmail();
-        this.createOn = entity.getCreateOn();
-    }
 }

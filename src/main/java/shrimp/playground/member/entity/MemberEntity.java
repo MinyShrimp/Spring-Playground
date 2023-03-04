@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import shrimp.playground.member.dto.AddRequestDto;
 
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -35,10 +34,12 @@ public class MemberEntity {
     private Timestamp deleteOn;
 
     public MemberEntity(
-            AddRequestDto dto
+            String name,
+            String email,
+            String password
     ) {
-        this.name = dto.getName();
-        this.email = dto.getEmail();
-        this.password = dto.getPassword();
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
 }

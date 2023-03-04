@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import shrimp.playground.member.director.MemberDirector;
 import shrimp.playground.member.dto.AddRequestDto;
 import shrimp.playground.member.dto.AddResponseDto;
 import shrimp.playground.member.service.MemberService;
@@ -18,7 +19,7 @@ public class MemberController {
     public AddResponseDto addMember(
             @Valid @RequestBody AddRequestDto dto
     ) {
-        return new AddResponseDto(
+        return MemberDirector.entityToAddResponse(
                 memberService.addMember(dto)
         );
     }
