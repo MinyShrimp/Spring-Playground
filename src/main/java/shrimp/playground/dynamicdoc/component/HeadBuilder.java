@@ -2,31 +2,31 @@ package shrimp.playground.dynamicdoc.component;
 
 
 import shrimp.playground.dynamicdoc.types.Components;
+import shrimp.playground.dynamicdoc.types.HeadMetaData;
 import shrimp.playground.dynamicdoc.types.Meta;
-import shrimp.playground.dynamicdoc.types.MetaData;
 
 import java.util.Map;
 
 public class HeadBuilder {
 
-    public static String build(MetaData metaData) {
+    public static String build(HeadMetaData headMetaData) {
 
         StringBuilder builder = new StringBuilder(Components.HEADSTART).append(">");
 
-        if (metaData.getTitle() != null) {
+        if (headMetaData.getTitle() != null) {
             builder.append("<title>")
-                    .append(metaData.getTitle())
+                    .append(headMetaData.getTitle())
                     .append("</title>");
         }
 
-        if (metaData.getCharset() != null) {
+        if (headMetaData.getCharset() != null) {
             builder.append("<meta charset=\"")
-                    .append(metaData.getCharset())
+                    .append(headMetaData.getCharset())
                     .append("\">");
         }
 
-        if (metaData.getMetas().size() != 0) {
-            builder.append(MetaBuilder.build(metaData.getMetas()));
+        if (headMetaData.getMetas().size() != 0) {
+            builder.append(MetaBuilder.build(headMetaData.getMetas()));
         }
 
         builder.append(Components.HEADEND);
