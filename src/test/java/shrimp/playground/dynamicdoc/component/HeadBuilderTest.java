@@ -48,7 +48,7 @@ class HeadBuilderTest {
 
         String header = HeadBuilder.build(headMetaData);
         Assertions.assertThat(header).isEqualTo(
-                "<head ><title>Spring API Docs</title><meta charset=\"UTF-8\"><meta name=\"AUTHOR\" content=\"새우\"><meta name=\"KEYWORDS\" content=\"API\"><meta name=\"DESCRIPTION\" content=\"설명\"></head>"
+                "<head ><title>Spring API Docs</title><meta charset=\"UTF-8\"><meta name=\"author\" content=\"새우\"><meta name=\"keywords\" content=\"API\"><meta name=\"description\" content=\"설명\"></head>"
         );
     }
 }

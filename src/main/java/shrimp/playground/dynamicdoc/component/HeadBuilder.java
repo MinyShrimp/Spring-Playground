@@ -40,7 +40,7 @@ public class HeadBuilder {
             for (var entry : metas.entrySet()) {
                 builder.append("<meta ")
                         .append("name=\"")
-                        .append(entry.getKey())
+                        .append(entry.getKey().getDescription())
                         .append("\" content=\"")
                         .append(entry.getValue())
                         .append("\">");
