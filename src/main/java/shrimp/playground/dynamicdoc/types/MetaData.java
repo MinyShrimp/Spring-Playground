@@ -1,12 +1,12 @@
 package shrimp.playground.dynamicdoc.types;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Builder
+@AllArgsConstructor
 public class MetaData {
 
     private String id;

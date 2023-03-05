@@ -43,13 +43,13 @@
 		"value": "200"
 	}
 },
-"getCookie": {
+"getHeaderValue": {
 	"params": [
 		{ "type": "String", "name": "name" }
 	],
 	"returnValue": null
 },
-"getHeaderValue": {
+"getCookie": {
 	"params": [
 		{ "type": "String", "name": "name" }
 	],
@@ -66,17 +66,16 @@
 	"returnValue": null
 },
 "getContentAsString": {
-	"params": [],
-	"returnValue": {
-		"type": "String",
-		"value": "{'name':'새우','email':'ksk7584@gmail.com','createOn':'2023-03-05T14:46:28.404+00:00'}"
-	}
+	"params": [
+		{ "type": "Charset", "name": "fallbackCharset" }
+	],
+	"returnValue": null
 },
 "getCookies": {
 	"params": [],
 	"returnValue": {
 		"type": "Cookie[]",
-		"value": "[Ljakarta.servlet.http.Cookie;@795e8ef5"
+		"value": "[Ljakarta.servlet.http.Cookie;@19a544cd"
 	}
 },
 "getIncludedUrl": {
@@ -118,7 +117,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "ResponsePrintWriter",
-		"value": "org.springframework.mock.web.MockHttpServletResponse$ResponsePrintWriter@13976c57"
+		"value": "org.springframework.mock.web.MockHttpServletResponse$ResponsePrintWriter@6c502018"
 	}
 },
 "getHeaderNames": {
@@ -132,7 +131,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "byte[]",
-		"value": "[B@10b7b5f0"
+		"value": "[B@58c93be3"
 	}
 },
 "getContentType": {
@@ -146,7 +145,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "ResponseServletOutputStream",
-		"value": "org.springframework.mock.web.MockHttpServletResponse$ResponseServletOutputStream@80b70fd"
+		"value": "org.springframework.mock.web.MockHttpServletResponse$ResponseServletOutputStream@5dd62f07"
 	}
 },
 "getLocale": {

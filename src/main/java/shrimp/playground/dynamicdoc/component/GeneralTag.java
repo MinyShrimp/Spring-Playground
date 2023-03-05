@@ -15,8 +15,8 @@ public class GeneralTag {
         this.children = new LinkedList<>();
     }
 
-    public GeneralTag(String name) {
-        this.metaData = GeneralMetaData.defaultGeneralMetaData(name);
+    public GeneralTag(String name, String content) {
+        this.metaData = new GeneralMetaData(name, content);
         this.children = new LinkedList<>();
     }
 
@@ -36,13 +36,16 @@ public class GeneralTag {
             builder.append("class=\"").append(metaData.getClassName()).append("\" ");
         }
 
-        builder.append(">");
+        builder.append(">\n");
+
+        if (metaData.getContent() != null) {
+            builder.append(metaData.getContent()).append("\n");
+        }
 
         for (GeneralTag child : children) {
             builder.append(child.build());
         }
 
-        builder.append("</").append(metaData.getName()).append(">");
-        return builder.toString();
+        return builder.append("</").append(metaData.getName()).append(">\n").toString();
     }
 }

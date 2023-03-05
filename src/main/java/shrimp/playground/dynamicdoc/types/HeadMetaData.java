@@ -18,6 +18,13 @@ public class HeadMetaData {
     private String charset;
     private Map<Meta, String> metas;
 
+    public static HeadMetaData defaultHeadMetaData() {
+        return MetaDataBuilder.builder()
+                .lang(Locale.KOREA)
+                .charset("UTF-8")
+                .build();
+    }
+
     public static class MetaDataBuilder {
         private final Map<Meta, String> metas;
         private Locale lang;

@@ -8,29 +8,21 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultHandler;
 import shrimp.playground.dynamicdoc.file.FileWrite;
 import shrimp.playground.dynamicdoc.fixed.HtmlBuilder;
-import shrimp.playground.dynamicdoc.handler.ResultClassMeta;
+import shrimp.playground.dynamicdoc.process.RequestProcess;
+import shrimp.playground.dynamicdoc.process.ResponseProcess;
 import shrimp.playground.dynamicdoc.types.HeadMetaData;
-
-import java.util.Locale;
 
 @Slf4j
 @Component
 public class ProcessResultHandler implements ResultHandler {
 
     private final FileWrite fileWrite;
-    private ResultClassMeta<MockHttpServletRequest> requestInfo;
-    private ResultClassMeta<MockHttpServletResponse> responseInfo;
-    private HtmlBuilder htmlBuilder;
+    private final HeadMetaData headMetaData;
 
     public ProcessResultHandler(
             FileWrite fileWrite
     ) {
-        HeadMetaData headMetaData = HeadMetaData.MetaDataBuilder.builder()
-                .lang(Locale.KOREA)
-                .charset("UTF-8")
-                .title("Test")
-                .build();
-        this.htmlBuilder = new HtmlBuilder(headMetaData);
+        this.headMetaData = HeadMetaData.defaultHeadMetaData();
         this.fileWrite = fileWrite;
     }
 
@@ -42,10 +34,12 @@ public class ProcessResultHandler implements ResultHandler {
         MockHttpServletResponse response = result.getResponse();
         response.setCharacterEncoding("UTF-8");
 
-        requestInfo = new ResultClassMeta<>(request);
-        fileWrite.writeJson("request", requestInfo.toString());
+        RequestProcess requestProcess = new RequestProcess(request);
+        HtmlBuilder htmlBuilder = new HtmlBuilder(headMetaData, requestProcess);
+        fileWrite.writeHtml("request", htmlBuilder.build());
 
-        responseInfo = new ResultClassMeta<>(response);
-        fileWrite.writeJson("response", responseInfo.toString());
+        ResponseProcess responseProcess = new ResponseProcess(request, response);
+        htmlBuilder.setTagProcess(responseProcess);
+        fileWrite.writeHtml("response", htmlBuilder.build());
     }
 }

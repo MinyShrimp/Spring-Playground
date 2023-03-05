@@ -7,33 +7,17 @@ import lombok.Setter;
 @Setter
 public class GeneralMetaData extends MetaData {
     private String name;
+    private String content;
 
-    public GeneralMetaData(String id, String className, String style, String name) {
+    public GeneralMetaData(String name, String content) {
+        super(null, null, null);
+        this.name = name;
+        this.content = content;
+    }
+
+    public GeneralMetaData(String name, String content, String id, String className, String style) {
         super(id, className, style);
         this.name = name;
-    }
-
-    public static GeneralMetaData defaultGeneralMetaData(String name) {
-        return new GeneralMetaData(null, null, null, name);
-    }
-
-    @Override
-    public String getId() {
-        return super.getId();
-    }
-
-    @Override
-    public void setId(String id) {
-        super.setId(id);
-    }
-
-    @Override
-    public String getClassName() {
-        return super.getClassName();
-    }
-
-    @Override
-    public void setClassName(String className) {
-        super.setClassName(className);
+        this.content = content;
     }
 }

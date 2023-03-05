@@ -1,19 +1,25 @@
 package shrimp.playground.dynamicdoc.fixed;
 
-import lombok.RequiredArgsConstructor;
-import shrimp.playground.dynamicdoc.process.DefaultProcess;
 import shrimp.playground.dynamicdoc.process.TagProcess;
 import shrimp.playground.dynamicdoc.types.Components;
 import shrimp.playground.dynamicdoc.types.HeadMetaData;
 
-@RequiredArgsConstructor
 public class HtmlBuilder {
     private final HeadMetaData headMetaData;
-    private final TagProcess tagProcess;
+    private TagProcess tagProcess;
 
     public HtmlBuilder(HeadMetaData headMetaData) {
         this.headMetaData = headMetaData;
-        this.tagProcess = new DefaultProcess();
+        this.tagProcess = TagProcess.DefaultProcess;
+    }
+
+    public HtmlBuilder(HeadMetaData headMetaData, TagProcess tagProcess) {
+        this.headMetaData = headMetaData;
+        this.tagProcess = tagProcess;
+    }
+
+    public void setTagProcess(TagProcess tagProcess) {
+        this.tagProcess = tagProcess;
     }
 
     public String build() {
