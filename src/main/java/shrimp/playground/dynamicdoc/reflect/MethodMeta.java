@@ -26,19 +26,19 @@ public class MethodMeta {
     }
 
     private void setStringCache() {
-        StringBuilder builder = new StringBuilder("{\n\tparams: [");
+        StringBuilder builder = new StringBuilder("{\n\t\"params\": [");
 
         if (params.size() != 0) {
             String paramsString = params.stream()
                     .map(ParamMeta::toString)
-                    .collect(Collectors.joining());
+                    .collect(Collectors.joining(",\n"));
 
             builder.append("\n\t\t")
                     .append(paramsString)
                     .append("\n\t");
         }
 
-        builder.append("],\n\treturnValue: ");
+        builder.append("],\n\t\"returnValue\": ");
 
         if (returnValue == null) {
             builder.append("null");

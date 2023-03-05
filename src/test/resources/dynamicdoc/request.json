@@ -1,0 +1,371 @@
+{
+"getPathInfo": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "/member/add"
+	}
+},
+"getClass": {
+	"params": [],
+	"returnValue": {
+		"type": "Class",
+		"value": "class org.springframework.mock.web.MockHttpServletRequest"
+	}
+},
+"getUserPrincipal": {
+	"params": [],
+	"returnValue": null
+},
+"getRemoteAddr": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "127.0.0.1"
+	}
+},
+"getDateHeader": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getServletPath": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": ""
+	}
+},
+"getParameterMap": {
+	"params": [],
+	"returnValue": {
+		"type": "UnmodifiableMap",
+		"value": "{}"
+	}
+},
+"getIntHeader": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getMethod": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "POST"
+	}
+},
+"getContextPath": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": ""
+	}
+},
+"getServerName": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "localhost"
+	}
+},
+"getPathTranslated": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "/Users/gimhoemin/Desktop/project/java/spring/project/playground/src/main/webapp/member/add"
+	}
+},
+"getRequestedSessionId": {
+	"params": [],
+	"returnValue": null
+},
+"getRemotePort": {
+	"params": [],
+	"returnValue": {
+		"type": "Integer",
+		"value": "80"
+	}
+},
+"getProtocolRequestId": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": ""
+	}
+},
+"getContentAsString": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "{'name': '새우', 'email': 'ksk7584@gmail.com', 'password': 'qwer1234!'}"
+	}
+},
+"getRequestId": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": ""
+	}
+},
+"getParameter": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getHttpServletMapping": {
+	"params": [],
+	"returnValue": {
+		"type": "MockHttpServletMapping",
+		"value": "MockHttpServletMapping [matchValue='', pattern='', servletName='', mappingMatch=null]"
+	}
+},
+"getRequestURL": {
+	"params": [],
+	"returnValue": {
+		"type": "StringBuffer",
+		"value": "http://localhost/member/add"
+	}
+},
+"getRequestURI": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "/member/add"
+	}
+},
+"getRequestDispatcher": {
+	"params": [
+		{ "type": "String", "name": "path" }
+	],
+	"returnValue": null
+},
+"getAsyncContext": {
+	"params": [],
+	"returnValue": null
+},
+"getContentLength": {
+	"params": [],
+	"returnValue": {
+		"type": "Integer",
+		"value": "73"
+	}
+},
+"getInputStream": {
+	"params": [],
+	"returnValue": {
+		"type": "DelegatingServletInputStream",
+		"value": "org.springframework.mock.web.DelegatingServletInputStream@6491006"
+	}
+},
+"getCharacterEncoding": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "UTF-8"
+	}
+},
+"getServerPort": {
+	"params": [],
+	"returnValue": {
+		"type": "Integer",
+		"value": "80"
+	}
+},
+"getAttributeNames": {
+	"params": [],
+	"returnValue": {
+		"type": "",
+		"value": "java.util.Collections$3@42fb2be9"
+	}
+},
+"getContentLengthLong": {
+	"params": [],
+	"returnValue": {
+		"type": "Long",
+		"value": "73"
+	}
+},
+"getContentAsByteArray": {
+	"params": [],
+	"returnValue": {
+		"type": "byte[]",
+		"value": "[B@54816d7a"
+	}
+},
+"getContentType": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "application/json"
+	}
+},
+"getParameterNames": {
+	"params": [],
+	"returnValue": {
+		"type": "",
+		"value": "java.util.Collections$3@106ac5f4"
+	}
+},
+"getAuthType": {
+	"params": [],
+	"returnValue": null
+},
+"getLocalPort": {
+	"params": [],
+	"returnValue": {
+		"type": "Integer",
+		"value": "80"
+	}
+},
+"getServletContext": {
+	"params": [],
+	"returnValue": {
+		"type": "SpringBootMockServletContext",
+		"value": "org.springframework.boot.test.mock.web.SpringBootMockServletContext@5eed2edf"
+	}
+},
+"getRemoteHost": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "localhost"
+	}
+},
+"getLocalAddr": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "127.0.0.1"
+	}
+},
+"getHeader": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getTrailerFields": {
+	"params": [],
+	"returnValue": {
+		"type": "EmptyMap",
+		"value": "{}"
+	}
+},
+"getAttribute": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getCookies": {
+	"params": [],
+	"returnValue": null
+},
+"getServletConnection": {
+	"params": [],
+	"returnValue": {
+		"type": "",
+		"value": "org.springframework.mock.web.MockHttpServletRequest$1@4552e288"
+	}
+},
+"getLocales": {
+	"params": [],
+	"returnValue": {
+		"type": "",
+		"value": "java.util.Collections$3@1a67bde5"
+	}
+},
+"getParts": {
+	"params": [],
+	"returnValue": {
+		"type": "LinkedList",
+		"value": "[]"
+	}
+},
+"getParameterValues": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getScheme": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "http"
+	}
+},
+"getHeaders": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getReader": {
+	"params": [],
+	"returnValue": {
+		"type": "InvocationTargetException",
+		"value": "null"
+	}
+},
+"getQueryString": {
+	"params": [],
+	"returnValue": null
+},
+"getProtocol": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "HTTP/1.1"
+	}
+},
+"getPart": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getLocalName": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "localhost"
+	}
+},
+"getRemoteUser": {
+	"params": [],
+	"returnValue": null
+},
+"getHeaderNames": {
+	"params": [],
+	"returnValue": {
+		"type": "",
+		"value": "java.util.Collections$3@5c648e38"
+	}
+},
+"getDispatcherType": {
+	"params": [],
+	"returnValue": {
+		"type": "DispatcherType",
+		"value": "REQUEST"
+	}
+},
+"getLocale": {
+	"params": [],
+	"returnValue": {
+		"type": "Locale",
+		"value": "en"
+	}
+},
+"getSession": {
+	"params": [],
+	"returnValue": {
+		"type": "MockHttpSession",
+		"value": "org.springframework.mock.web.MockHttpSession@6bc8d8bd"
+	}
+}
+}

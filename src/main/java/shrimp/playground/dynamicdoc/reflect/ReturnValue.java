@@ -16,15 +16,13 @@ public class ReturnValue {
     public void setStringCache() {
         StringBuilder builder = new StringBuilder("{\n");
 
-        builder.append("\t\ttype: \"").append(type).append("\",\n");
-        builder.append("\t\tvalue: \"");
+        builder.append("\t\t\"type\": \"").append(type).append("\",\n");
+        builder.append("\t\t\"value\": \"");
 
         if (value instanceof Throwable) {
             builder.append(((Throwable) value).getMessage());
-        } else if (value instanceof String) {
-            builder.append(value);
         } else {
-            builder.append(value.toString());
+            builder.append(value.toString().replace("\"", "'"));
         }
 
         builder.append("\"\n\t}");

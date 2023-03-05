@@ -19,6 +19,6 @@ public class ParamMeta {
 
     @Override
     public String toString() {
-        return "{ type: \"" + type + "\", name: \"" + name + "\" },";
+        return "{ \"type\": \"" + type + "\", \"name\": \"" + name + "\" }";
     }
 }

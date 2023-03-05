@@ -33,10 +33,10 @@ public class ClassMeta<T> {
     }
 
     protected void setStringCache() {
-        this.stringCache = info.entrySet()
+        this.stringCache = "{\n" + info.entrySet()
                 .stream()
-                .map(entry -> "\n" + entry.getKey() + ": " + entry.getValue().toString() + ",")
-                .collect(Collectors.joining());
+                .map(entry -> "\"" + entry.getKey() + "\": " + entry.getValue().toString())
+                .collect(Collectors.joining(",\n")) + "\n}";
     }
 
     @Override

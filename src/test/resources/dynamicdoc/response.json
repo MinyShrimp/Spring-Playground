@@ -1,0 +1,345 @@
+{
+"getClass": {
+	"params": [],
+	"returnValue": null
+},
+"getForwardedUrl": {
+	"params": [],
+	"returnValue": null
+},
+"getIncludedUrls": {
+	"params": [],
+	"returnValue": null
+},
+"setContentLength": {
+	"params": [
+		{ "type": "int", "name": "contentLength" }
+	],
+	"returnValue": null
+},
+"getDateHeader": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getBufferSize": {
+	"params": [],
+	"returnValue": null
+},
+"getHeaderValues": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getStatus": {
+	"params": [],
+	"returnValue": null
+},
+"getCookie": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"setHeader": {
+	"params": [
+		{ "type": "String", "name": "name" },
+{ "type": "String", "name": "value" }
+	],
+	"returnValue": null
+},
+"addCookie": {
+	"params": [
+		{ "type": "Cookie", "name": "cookie" }
+	],
+	"returnValue": null
+},
+"setTrailerFields": {
+	"params": [
+		{ "type": "Supplier", "name": "arg0" }
+	],
+	"returnValue": null
+},
+"getContentAsString": {
+	"params": [
+		{ "type": "Charset", "name": "fallbackCharset" }
+	],
+	"returnValue": null
+},
+"resetBuffer": {
+	"params": [],
+	"returnValue": null
+},
+"setIntHeader": {
+	"params": [
+		{ "type": "String", "name": "name" },
+{ "type": "int", "name": "value" }
+	],
+	"returnValue": null
+},
+"setContentType": {
+	"params": [
+		{ "type": "String", "name": "contentType" }
+	],
+	"returnValue": null
+},
+"addDateHeader": {
+	"params": [
+		{ "type": "String", "name": "name" },
+{ "type": "long", "name": "value" }
+	],
+	"returnValue": null
+},
+"encodeURL": {
+	"params": [
+		{ "type": "String", "name": "url" }
+	],
+	"returnValue": null
+},
+"getIncludedUrl": {
+	"params": [],
+	"returnValue": null
+},
+"setDateHeader": {
+	"params": [
+		{ "type": "String", "name": "name" },
+{ "type": "long", "name": "value" }
+	],
+	"returnValue": null
+},
+"encodeRedirectURL": {
+	"params": [
+		{ "type": "String", "name": "url" }
+	],
+	"returnValue": null
+},
+"getContentLength": {
+	"params": [],
+	"returnValue": null
+},
+"isCommitted": {
+	"params": [],
+	"returnValue": null
+},
+"setCharacterEncoding": {
+	"params": [
+		{ "type": "String", "name": "characterEncoding" }
+	],
+	"returnValue": null
+},
+"setContentLengthLong": {
+	"params": [
+		{ "type": "long", "name": "contentLength" }
+	],
+	"returnValue": null
+},
+"getCharacterEncoding": {
+	"params": [],
+	"returnValue": null
+},
+"flushBuffer": {
+	"params": [],
+	"returnValue": null
+},
+"getContentLengthLong": {
+	"params": [],
+	"returnValue": null
+},
+"getContentAsByteArray": {
+	"params": [],
+	"returnValue": null
+},
+"getContentType": {
+	"params": [],
+	"returnValue": null
+},
+"reset": {
+	"params": [],
+	"returnValue": null
+},
+"isOutputStreamAccessAllowed": {
+	"params": [],
+	"returnValue": null
+},
+"containsHeader": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"addIntHeader": {
+	"params": [
+		{ "type": "String", "name": "name" },
+{ "type": "int", "name": "value" }
+	],
+	"returnValue": null
+},
+"isCharset": {
+	"params": [],
+	"returnValue": null
+},
+"setLocale": {
+	"params": [
+		{ "type": "Locale", "name": "locale" }
+	],
+	"returnValue": null
+},
+"addIncludedUrl": {
+	"params": [
+		{ "type": "String", "name": "includedUrl" }
+	],
+	"returnValue": null
+},
+"wait": {
+	"params": [
+		{ "type": "long", "name": "arg0" }
+	],
+	"returnValue": null
+},
+"setForwardedUrl": {
+	"params": [
+		{ "type": "String", "name": "forwardedUrl" }
+	],
+	"returnValue": null
+},
+"setDefaultCharacterEncoding": {
+	"params": [
+		{ "type": "String", "name": "characterEncoding" }
+	],
+	"returnValue": null
+},
+"notifyAll": {
+	"params": [],
+	"returnValue": null
+},
+"sendError": {
+	"params": [
+		{ "type": "int", "name": "status" },
+{ "type": "String", "name": "errorMessage" }
+	],
+	"returnValue": null
+},
+"setWriterAccessAllowed": {
+	"params": [
+		{ "type": "boolean", "name": "writerAccessAllowed" }
+	],
+	"returnValue": null
+},
+"getHeaderValue": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"notify": {
+	"params": [],
+	"returnValue": null
+},
+"getHeader": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"getTrailerFields": {
+	"params": [],
+	"returnValue": null
+},
+"hashCode": {
+	"params": [],
+	"returnValue": null
+},
+"getCookies": {
+	"params": [],
+	"returnValue": null
+},
+"setCommitted": {
+	"params": [
+		{ "type": "boolean", "name": "committed" }
+	],
+	"returnValue": null
+},
+"setBufferSize": {
+	"params": [
+		{ "type": "int", "name": "bufferSize" }
+	],
+	"returnValue": null
+},
+"addHeader": {
+	"params": [
+		{ "type": "String", "name": "name" },
+{ "type": "String", "name": "value" }
+	],
+	"returnValue": null
+},
+"getHeaders": {
+	"params": [
+		{ "type": "String", "name": "name" }
+	],
+	"returnValue": null
+},
+"sendRedirect": {
+	"params": [
+		{ "type": "String", "name": "url" }
+	],
+	"returnValue": null
+},
+"setStatus": {
+	"params": [
+		{ "type": "int", "name": "status" }
+	],
+	"returnValue": null
+},
+"isWriterAccessAllowed": {
+	"params": [],
+	"returnValue": null
+},
+"getRedirectedUrl": {
+	"params": [],
+	"returnValue": null
+},
+"getWriter": {
+	"params": [],
+	"returnValue": null
+},
+"getHeaderNames": {
+	"params": [],
+	"returnValue": null
+},
+"equals": {
+	"params": [
+		{ "type": "Object", "name": "arg0" }
+	],
+	"returnValue": null
+},
+"setIncludedUrl": {
+	"params": [
+		{ "type": "String", "name": "includedUrl" }
+	],
+	"returnValue": null
+},
+"getOutputStream": {
+	"params": [],
+	"returnValue": null
+},
+"setOutputStreamAccessAllowed": {
+	"params": [
+		{ "type": "boolean", "name": "outputStreamAccessAllowed" }
+	],
+	"returnValue": null
+},
+"toString": {
+	"params": [],
+	"returnValue": null
+},
+"getLocale": {
+	"params": [],
+	"returnValue": null
+},
+"getErrorMessage": {
+	"params": [],
+	"returnValue": null
+}
+}
