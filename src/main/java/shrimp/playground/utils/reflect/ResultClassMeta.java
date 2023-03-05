@@ -1,7 +1,4 @@
-package shrimp.playground.deprecate.dynamicdoc.handler;
-
-import shrimp.playground.deprecate.dynamicdoc.reflect.ClassMeta;
-import shrimp.playground.deprecate.dynamicdoc.reflect.MethodMeta;
+package shrimp.playground.utils.reflect;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -19,12 +16,11 @@ public class ResultClassMeta<T> extends ClassMeta<T> {
         Method[] methods = clazz.getMethods();
 
         Arrays.stream(methods)
-                .filter(method -> method.getName().contains("get"))
+                .filter(method -> method.getParameterCount() == 0)
                 .forEach(method -> {
                     info.put(method.getName(), new ResultMethodMeta<>(object, method));
                 });
 
-        info.values().stream().filter(param -> param.getParams().size() == 0)
-                .forEach(MethodMeta::setReturnValue);
+        info.values().forEach(MethodMeta::setReturnValue);
     }
 }

@@ -1,4 +1,4 @@
-package shrimp.playground.deprecate.dynamicdoc.reflect;
+package shrimp.playground.utils.reflect;
 
 import lombok.Getter;
 

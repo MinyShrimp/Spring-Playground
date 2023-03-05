@@ -1,8 +1,6 @@
-package shrimp.playground.deprecate.dynamicdoc.handler;
+package shrimp.playground.utils.reflect;
 
 import lombok.extern.slf4j.Slf4j;
-import shrimp.playground.deprecate.dynamicdoc.reflect.MethodMeta;
-import shrimp.playground.deprecate.dynamicdoc.reflect.ReturnValue;
 
 import java.lang.reflect.Method;
 

@@ -1,4 +1,4 @@
-package shrimp.playground.deprecate.dynamicdoc.file;
+package shrimp.playground.utils.file;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.nio.file.Paths;
 
 @Slf4j
-public class FileWrite {
+public class FileWriter {
 
     private static void write(
             String fullPath, String contents
