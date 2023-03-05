@@ -4,11 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
+import shrimp.playground.document.RestDocsTestSupport;
 import shrimp.playground.member.entity.MemberEntity;
 import shrimp.playground.member.repository.MemberRepository;
 
@@ -20,13 +17,9 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static shrimp.playground.document.utils.RestDocsConfig.field;
 
-@AutoConfigureMockMvc
-@AutoConfigureRestDocs
-@SpringBootTest
-public class MemberControllerTest {
-    @Autowired
-    private MockMvc mockMvc;
+public class MemberControllerTest extends RestDocsTestSupport {
 
     @Autowired
     private MemberRepository memberRepository;
@@ -54,7 +47,7 @@ public class MemberControllerTest {
                             requestFields(
                                     fieldWithPath("name").description("회원 이름"),
                                     fieldWithPath("email").description("이메일"),
-                                    fieldWithPath("password").description("비밀 번호")
+                                    fieldWithPath("password").description("비밀 번호").attributes(field("constraints", "영어 소문자 + 숫자 + 특수문자"))
                             ),
                             responseFields(
                                     fieldWithPath("name").description("회원 이름"),
