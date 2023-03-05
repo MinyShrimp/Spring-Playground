@@ -1,18 +1,18 @@
-package shrimp.playground.dynamicdoc.reflect;
+package shrimp.playground.dynamicdoc.handler;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.mock.web.MockHttpServletRequest;
+import shrimp.playground.dynamicdoc.reflect.MethodMeta;
+import shrimp.playground.dynamicdoc.reflect.ReturnValue;
 
 import java.lang.reflect.Method;
 
 @Slf4j
-public class RequestMethodMeta extends MethodMeta {
+public class ResultMethodMeta<T> extends MethodMeta {
 
-    private final MockHttpServletRequest request;
+    private final T request;
 
-
-    public RequestMethodMeta(
-            MockHttpServletRequest request,
+    public ResultMethodMeta(
+            T request,
             Method method
     ) {
         super(method);

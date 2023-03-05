@@ -1,7 +1,10 @@
 {
 "getClass": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "Class",
+		"value": "class org.springframework.mock.web.MockHttpServletResponse"
+	}
 },
 "getForwardedUrl": {
 	"params": [],
@@ -9,13 +12,10 @@
 },
 "getIncludedUrls": {
 	"params": [],
-	"returnValue": null
-},
-"setContentLength": {
-	"params": [
-		{ "type": "int", "name": "contentLength" }
-	],
-	"returnValue": null
+	"returnValue": {
+		"type": "ArrayList",
+		"value": "[]"
+	}
 },
 "getDateHeader": {
 	"params": [
@@ -25,7 +25,10 @@
 },
 "getBufferSize": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "Integer",
+		"value": "4096"
+	}
 },
 "getHeaderValues": {
 	"params": [
@@ -35,7 +38,10 @@
 },
 "getStatus": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "Integer",
+		"value": "200"
+	}
 },
 "getCookie": {
 	"params": [
@@ -43,198 +49,10 @@
 	],
 	"returnValue": null
 },
-"setHeader": {
-	"params": [
-		{ "type": "String", "name": "name" },
-{ "type": "String", "name": "value" }
-	],
-	"returnValue": null
-},
-"addCookie": {
-	"params": [
-		{ "type": "Cookie", "name": "cookie" }
-	],
-	"returnValue": null
-},
-"setTrailerFields": {
-	"params": [
-		{ "type": "Supplier", "name": "arg0" }
-	],
-	"returnValue": null
-},
-"getContentAsString": {
-	"params": [
-		{ "type": "Charset", "name": "fallbackCharset" }
-	],
-	"returnValue": null
-},
-"resetBuffer": {
-	"params": [],
-	"returnValue": null
-},
-"setIntHeader": {
-	"params": [
-		{ "type": "String", "name": "name" },
-{ "type": "int", "name": "value" }
-	],
-	"returnValue": null
-},
-"setContentType": {
-	"params": [
-		{ "type": "String", "name": "contentType" }
-	],
-	"returnValue": null
-},
-"addDateHeader": {
-	"params": [
-		{ "type": "String", "name": "name" },
-{ "type": "long", "name": "value" }
-	],
-	"returnValue": null
-},
-"encodeURL": {
-	"params": [
-		{ "type": "String", "name": "url" }
-	],
-	"returnValue": null
-},
-"getIncludedUrl": {
-	"params": [],
-	"returnValue": null
-},
-"setDateHeader": {
-	"params": [
-		{ "type": "String", "name": "name" },
-{ "type": "long", "name": "value" }
-	],
-	"returnValue": null
-},
-"encodeRedirectURL": {
-	"params": [
-		{ "type": "String", "name": "url" }
-	],
-	"returnValue": null
-},
-"getContentLength": {
-	"params": [],
-	"returnValue": null
-},
-"isCommitted": {
-	"params": [],
-	"returnValue": null
-},
-"setCharacterEncoding": {
-	"params": [
-		{ "type": "String", "name": "characterEncoding" }
-	],
-	"returnValue": null
-},
-"setContentLengthLong": {
-	"params": [
-		{ "type": "long", "name": "contentLength" }
-	],
-	"returnValue": null
-},
-"getCharacterEncoding": {
-	"params": [],
-	"returnValue": null
-},
-"flushBuffer": {
-	"params": [],
-	"returnValue": null
-},
-"getContentLengthLong": {
-	"params": [],
-	"returnValue": null
-},
-"getContentAsByteArray": {
-	"params": [],
-	"returnValue": null
-},
-"getContentType": {
-	"params": [],
-	"returnValue": null
-},
-"reset": {
-	"params": [],
-	"returnValue": null
-},
-"isOutputStreamAccessAllowed": {
-	"params": [],
-	"returnValue": null
-},
-"containsHeader": {
-	"params": [
-		{ "type": "String", "name": "name" }
-	],
-	"returnValue": null
-},
-"addIntHeader": {
-	"params": [
-		{ "type": "String", "name": "name" },
-{ "type": "int", "name": "value" }
-	],
-	"returnValue": null
-},
-"isCharset": {
-	"params": [],
-	"returnValue": null
-},
-"setLocale": {
-	"params": [
-		{ "type": "Locale", "name": "locale" }
-	],
-	"returnValue": null
-},
-"addIncludedUrl": {
-	"params": [
-		{ "type": "String", "name": "includedUrl" }
-	],
-	"returnValue": null
-},
-"wait": {
-	"params": [
-		{ "type": "long", "name": "arg0" }
-	],
-	"returnValue": null
-},
-"setForwardedUrl": {
-	"params": [
-		{ "type": "String", "name": "forwardedUrl" }
-	],
-	"returnValue": null
-},
-"setDefaultCharacterEncoding": {
-	"params": [
-		{ "type": "String", "name": "characterEncoding" }
-	],
-	"returnValue": null
-},
-"notifyAll": {
-	"params": [],
-	"returnValue": null
-},
-"sendError": {
-	"params": [
-		{ "type": "int", "name": "status" },
-{ "type": "String", "name": "errorMessage" }
-	],
-	"returnValue": null
-},
-"setWriterAccessAllowed": {
-	"params": [
-		{ "type": "boolean", "name": "writerAccessAllowed" }
-	],
-	"returnValue": null
-},
 "getHeaderValue": {
 	"params": [
 		{ "type": "String", "name": "name" }
 	],
-	"returnValue": null
-},
-"notify": {
-	"params": [],
 	"returnValue": null
 },
 "getHeader": {
@@ -247,31 +65,22 @@
 	"params": [],
 	"returnValue": null
 },
-"hashCode": {
+"getContentAsString": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "String",
+		"value": "{'name':'새우','email':'ksk7584@gmail.com','createOn':'2023-03-05T14:46:28.404+00:00'}"
+	}
 },
 "getCookies": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "Cookie[]",
+		"value": "[Ljakarta.servlet.http.Cookie;@795e8ef5"
+	}
 },
-"setCommitted": {
-	"params": [
-		{ "type": "boolean", "name": "committed" }
-	],
-	"returnValue": null
-},
-"setBufferSize": {
-	"params": [
-		{ "type": "int", "name": "bufferSize" }
-	],
-	"returnValue": null
-},
-"addHeader": {
-	"params": [
-		{ "type": "String", "name": "name" },
-{ "type": "String", "name": "value" }
-	],
+"getIncludedUrl": {
+	"params": [],
 	"returnValue": null
 },
 "getHeaders": {
@@ -280,63 +89,72 @@
 	],
 	"returnValue": null
 },
-"sendRedirect": {
-	"params": [
-		{ "type": "String", "name": "url" }
-	],
-	"returnValue": null
-},
-"setStatus": {
-	"params": [
-		{ "type": "int", "name": "status" }
-	],
-	"returnValue": null
-},
-"isWriterAccessAllowed": {
+"getContentLength": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "Integer",
+		"value": "0"
+	}
+},
+"getCharacterEncoding": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "UTF-8"
+	}
 },
 "getRedirectedUrl": {
 	"params": [],
 	"returnValue": null
 },
+"getContentLengthLong": {
+	"params": [],
+	"returnValue": {
+		"type": "Long",
+		"value": "0"
+	}
+},
 "getWriter": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "ResponsePrintWriter",
+		"value": "org.springframework.mock.web.MockHttpServletResponse$ResponsePrintWriter@13976c57"
+	}
 },
 "getHeaderNames": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "KeySet",
+		"value": "[Content-Type]"
+	}
 },
-"equals": {
-	"params": [
-		{ "type": "Object", "name": "arg0" }
-	],
-	"returnValue": null
+"getContentAsByteArray": {
+	"params": [],
+	"returnValue": {
+		"type": "byte[]",
+		"value": "[B@10b7b5f0"
+	}
 },
-"setIncludedUrl": {
-	"params": [
-		{ "type": "String", "name": "includedUrl" }
-	],
-	"returnValue": null
+"getContentType": {
+	"params": [],
+	"returnValue": {
+		"type": "String",
+		"value": "application/json;charset=UTF-8"
+	}
 },
 "getOutputStream": {
 	"params": [],
-	"returnValue": null
-},
-"setOutputStreamAccessAllowed": {
-	"params": [
-		{ "type": "boolean", "name": "outputStreamAccessAllowed" }
-	],
-	"returnValue": null
-},
-"toString": {
-	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "ResponseServletOutputStream",
+		"value": "org.springframework.mock.web.MockHttpServletResponse$ResponseServletOutputStream@80b70fd"
+	}
 },
 "getLocale": {
 	"params": [],
-	"returnValue": null
+	"returnValue": {
+		"type": "Locale",
+		"value": "ko_KR"
+	}
 },
 "getErrorMessage": {
 	"params": [],

@@ -36,5 +36,4 @@ class ProcessResultHandlerTest {
                 .andExpect(jsonPath("$.email").value("ksk7584@gmail.com"))
                 .andDo(handler);
     }
-
 }

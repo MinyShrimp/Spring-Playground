@@ -1,26 +1,27 @@
-package shrimp.playground.dynamicdoc.reflect;
+package shrimp.playground.dynamicdoc.handler;
 
-import org.springframework.mock.web.MockHttpServletRequest;
+import shrimp.playground.dynamicdoc.reflect.ClassMeta;
+import shrimp.playground.dynamicdoc.reflect.MethodMeta;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-public class RequestClassMeta extends ClassMeta<MockHttpServletRequest> {
+public class ResultClassMeta<T> extends ClassMeta<T> {
 
-    public RequestClassMeta(
-            MockHttpServletRequest request
+    public ResultClassMeta(
+            T request
     ) {
         super(request);
     }
 
     @Override
-    protected void init(MockHttpServletRequest request) {
+    protected void init(T request) {
         Method[] methods = clazz.getMethods();
 
         Arrays.stream(methods)
                 .filter(method -> method.getName().contains("get"))
                 .forEach(method -> {
-                    info.put(method.getName(), new RequestMethodMeta(object, method));
+                    info.put(method.getName(), new ResultMethodMeta<>(object, method));
                 });
 
         info.values().stream().filter(param -> param.getParams().size() == 0)

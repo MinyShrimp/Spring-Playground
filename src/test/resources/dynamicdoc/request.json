@@ -158,7 +158,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "DelegatingServletInputStream",
-		"value": "org.springframework.mock.web.DelegatingServletInputStream@6491006"
+		"value": "org.springframework.mock.web.DelegatingServletInputStream@1a67bde5"
 	}
 },
 "getCharacterEncoding": {
@@ -179,7 +179,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "",
-		"value": "java.util.Collections$3@42fb2be9"
+		"value": "java.util.Collections$3@5c648e38"
 	}
 },
 "getContentLengthLong": {
@@ -193,7 +193,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "byte[]",
-		"value": "[B@54816d7a"
+		"value": "[B@6bc8d8bd"
 	}
 },
 "getContentType": {
@@ -207,7 +207,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "",
-		"value": "java.util.Collections$3@106ac5f4"
+		"value": "java.util.Collections$3@395c21ee"
 	}
 },
 "getAuthType": {
@@ -225,7 +225,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "SpringBootMockServletContext",
-		"value": "org.springframework.boot.test.mock.web.SpringBootMockServletContext@5eed2edf"
+		"value": "org.springframework.boot.test.mock.web.SpringBootMockServletContext@1e733bb5"
 	}
 },
 "getRemoteHost": {
@@ -269,14 +269,14 @@
 	"params": [],
 	"returnValue": {
 		"type": "",
-		"value": "org.springframework.mock.web.MockHttpServletRequest$1@4552e288"
+		"value": "org.springframework.mock.web.MockHttpServletRequest$1@669e730d"
 	}
 },
 "getLocales": {
 	"params": [],
 	"returnValue": {
 		"type": "",
-		"value": "java.util.Collections$3@1a67bde5"
+		"value": "java.util.Collections$3@4b3e4253"
 	}
 },
 "getParts": {
@@ -344,7 +344,7 @@
 	"params": [],
 	"returnValue": {
 		"type": "",
-		"value": "java.util.Collections$3@5c648e38"
+		"value": "java.util.Collections$3@13b5598b"
 	}
 },
 "getDispatcherType": {
@@ -362,10 +362,9 @@
 	}
 },
 "getSession": {
-	"params": [],
-	"returnValue": {
-		"type": "MockHttpSession",
-		"value": "org.springframework.mock.web.MockHttpSession@6bc8d8bd"
-	}
+	"params": [
+		{ "type": "boolean", "name": "create" }
+	],
+	"returnValue": null
 }
 }
