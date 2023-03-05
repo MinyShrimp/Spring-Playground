@@ -13,21 +13,21 @@ https://github.com/MinyShrimp/Spring-Playground
 
 === 성공
 
-operation::post-addMember[snippets='http-request,request-fields,http-response,response-fields']
+operation::create-member-test/ok[snippets='http-request,request-fields,http-response,response-fields']
 
 [[Member-Delete]]
 == 회원 탈퇴
 
 === 성공
 
-operation::delete-member[snippets='http-request,request-fields,http-response,response-fields']
+operation::delete-member-test/ok[snippets='http-request,request-fields,http-response,response-fields']
 
 [[Member-Delete-EX-NoMember]]
 === 실패 - 없는 회원
 
-operation::delete-member-ex-noMember[snippets='http-request,request-fields,http-response,response-fields']
+operation::delete-member-test/no-member[snippets='http-request,request-fields,http-response,response-fields']
 
 [[Member-Delete-EX-Already]]
 === 실패 - 이미 탈퇴한 회원
 
-operation::delete-member-ex-already[snippets='http-request,request-fields,http-response,response-fields']
+operation::delete-member-test/already[snippets='http-request,request-fields,http-response,response-fields']

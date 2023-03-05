@@ -11,8 +11,6 @@ import shrimp.playground.member.repository.MemberRepository;
 
 import java.util.UUID;
 
-import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
-import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -26,11 +24,11 @@ public class MemberControllerTest extends RestDocsTestSupport {
 
     @Nested
     @DisplayName("회원 가입 테스트")
-    class CreateTest {
+    class CreateMemberTest {
 
         @Test
         @DisplayName("정상 호출")
-        void createTestOk() throws Exception {
+        void ok() throws Exception {
 
             String content = "{\"name\": \"새우\", \"email\": \"ksk7584@gmail.com\", \"password\": \"qwer1234!\"}";
 
@@ -41,9 +39,7 @@ public class MemberControllerTest extends RestDocsTestSupport {
                     .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                     .andExpect(jsonPath("$.name").value("새우"))
                     .andExpect(jsonPath("$.email").value("ksk7584@gmail.com"))
-                    .andDo(document("post-addMember",
-                            preprocessRequest(prettyPrint()),
-                            preprocessResponse(prettyPrint()),
+                    .andDo(restDocs.document(
                             requestFields(
                                     fieldWithPath("name").description("회원 이름"),
                                     fieldWithPath("email").description("이메일"),
@@ -60,10 +56,10 @@ public class MemberControllerTest extends RestDocsTestSupport {
 
     @Nested
     @DisplayName("회원 탈퇴 테스트")
-    class DeleteTest {
+    class DeleteMemberTest {
         @Test
         @DisplayName("정상 호출")
-        void deleteTestOk() throws Exception {
+        void ok() throws Exception {
 
             MemberEntity member = memberRepository.save(
                     new MemberEntity("새우", "ksk7584@gmail.com", "qwer1234!")
@@ -77,9 +73,7 @@ public class MemberControllerTest extends RestDocsTestSupport {
                     .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                     .andExpect(jsonPath("$.memberName").value("새우"))
                     .andExpect(jsonPath("$.message").value("good bye [새우] ..."))
-                    .andDo(document("delete-member",
-                            preprocessRequest(prettyPrint()),
-                            preprocessResponse(prettyPrint()),
+                    .andDo(restDocs.document(
                             requestFields(
                                     fieldWithPath("memberId").description("회원 ID")
                             ),
@@ -92,7 +86,7 @@ public class MemberControllerTest extends RestDocsTestSupport {
 
         @Test
         @DisplayName("예외 호출 - 회원 가입 X")
-        void deleteTestThrow1() throws Exception {
+        void noMember() throws Exception {
             String content = "{\"memberId\": \"" + UUID.randomUUID() + "\"}";
 
             mockMvc.perform(delete("/member")
@@ -101,9 +95,7 @@ public class MemberControllerTest extends RestDocsTestSupport {
                     .andExpect(status().isBadRequest())
                     .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                     .andExpect(jsonPath("$.message").value("회원을 찾을 수 없습니다."))
-                    .andDo(document("delete-member-ex-noMember",
-                            preprocessRequest(prettyPrint()),
-                            preprocessResponse(prettyPrint()),
+                    .andDo(restDocs.document(
                             requestFields(
                                     fieldWithPath("memberId").description("회원 ID")
                             ),
@@ -115,7 +107,7 @@ public class MemberControllerTest extends RestDocsTestSupport {
 
         @Test
         @DisplayName("예외 호출 - 이미 탈퇴한 회원")
-        void deleteTestThrow2() throws Exception {
+        void already() throws Exception {
             MemberEntity member = memberRepository.save(
                     new MemberEntity("새우", "ksk7584@gmail.com", "qwer1234!")
             );
@@ -128,9 +120,7 @@ public class MemberControllerTest extends RestDocsTestSupport {
                     .andExpect(status().isBadRequest())
                     .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                     .andExpect(jsonPath("$.message").value("회원을 찾을 수 없습니다."))
-                    .andDo(document("delete-member-ex-already",
-                            preprocessRequest(prettyPrint()),
-                            preprocessResponse(prettyPrint()),
+                    .andDo(restDocs.document(
                             requestFields(
                                     fieldWithPath("memberId").description("회원 ID")
                             ),

@@ -74,6 +74,10 @@ asciidoctor {
         jvmArgs('--add-opens', 'java.base/sun.nio.ch=ALL-UNNAMED')
         jvmArgs('--add-opens', 'java.base/java.io=ALL-UNNAMED')
     }
+
+    sources {
+        include("**/*.adoc", "**/common/*.adoc")
+    }
 }
 
 asciidoctor.doFirst {
