@@ -1,7 +1,8 @@
 package shrimp.playground.dynamicdoc.fixed;
 
 import lombok.RequiredArgsConstructor;
-import shrimp.playground.dynamicdoc.TagProcess;
+import shrimp.playground.dynamicdoc.process.DefaultProcess;
+import shrimp.playground.dynamicdoc.process.TagProcess;
 import shrimp.playground.dynamicdoc.types.Components;
 import shrimp.playground.dynamicdoc.types.HeadMetaData;
 
@@ -12,7 +13,7 @@ public class HtmlBuilder {
 
     public HtmlBuilder(HeadMetaData headMetaData) {
         this.headMetaData = headMetaData;
-        this.tagProcess = () -> "";
+        this.tagProcess = new DefaultProcess();
     }
 
     public String build() {

@@ -19,10 +19,10 @@ public class HeadMetaData {
     private Map<Meta, String> metas;
 
     public static class MetaDataBuilder {
+        private final Map<Meta, String> metas;
         private Locale lang;
         private String title;
         private String charset;
-        private Map<Meta, String> metas;
 
         private MetaDataBuilder() {
             this.metas = new EnumMap<>(Meta.class);

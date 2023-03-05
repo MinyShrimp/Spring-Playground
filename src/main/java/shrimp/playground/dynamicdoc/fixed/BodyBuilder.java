@@ -1,7 +1,7 @@
 package shrimp.playground.dynamicdoc.fixed;
 
 import lombok.RequiredArgsConstructor;
-import shrimp.playground.dynamicdoc.TagProcess;
+import shrimp.playground.dynamicdoc.process.TagProcess;
 import shrimp.playground.dynamicdoc.types.Components;
 
 @RequiredArgsConstructor

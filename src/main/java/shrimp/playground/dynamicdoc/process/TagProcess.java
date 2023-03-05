@@ -1,4 +1,4 @@
-package shrimp.playground.dynamicdoc;
+package shrimp.playground.dynamicdoc.process;
 
 @FunctionalInterface
 public interface TagProcess {
