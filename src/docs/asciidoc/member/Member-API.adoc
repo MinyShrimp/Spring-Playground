@@ -1,0 +1,33 @@
+= 회원 API
+https://github.com/MinyShrimp/Spring-Playground
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toc-title: 회원 API
+:toclevels: 2
+:sectlinks:
+
+[[Member-Add]]
+== 회원 가입
+
+=== 성공
+
+operation::post-addMember[snippets='http-request,http-response,response-fields']
+
+[[Member-Delete]]
+== 회원 탈퇴
+
+=== 성공
+
+operation::delete-member[snippets='http-request,http-response,response-fields']
+
+[[Member-Delete-EX-NoMember]]
+=== 실패 - 없는 회원
+
+operation::delete-member-ex-noMember[snippets='http-request,http-response,response-fields']
+
+[[Member-Delete-EX-Already]]
+=== 실패 - 이미 탈퇴한 회원
+
+operation::delete-member-ex-already[snippets='http-request,http-response,response-fields']

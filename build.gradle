@@ -10,13 +10,10 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 configurations {
+    asciidoctorExt
     compileOnly {
         extendsFrom annotationProcessor
     }
-}
-
-configurations {
-    asciidoctorExt
 }
 
 repositories {
@@ -64,25 +61,40 @@ ext {
 }
 
 test {
-    useJUnitPlatform()
     outputs.dir snippetsDir
+    useJUnitPlatform()
 }
 
 asciidoctor {
+    dependsOn test
+    configurations 'asciidoctorExt'
+    inputs.dir snippetsDir
+
     forkOptions {
         jvmArgs('--add-opens', 'java.base/sun.nio.ch=ALL-UNNAMED')
         jvmArgs('--add-opens', 'java.base/java.io=ALL-UNNAMED')
     }
-    inputs.dir snippetsDir
-    configurations 'asciidoctorExt'
-    dependsOn test
 }
 
-bootJar {
+asciidoctor.doFirst {
+    delete file('src/main/resources/static/docs')
+}
+
+task copyDocument(type: Copy) {
     dependsOn asciidoctor
-
-    copy {
-        from asciidoctor.outputDir
-        into "src/main/resources/static/docs"
-    }
+    from file("build/docs/asciidoc")
+    into file("src/main/resources/static/docs")
 }
+
+build {
+    dependsOn copyDocument
+}
+
+//bootJar {
+//    dependsOn asciidoctor
+//
+//    copy {
+//        from asciidoctor.outputDir
+//        into "src/main/resources/static/docs"
+//    }
+//}
