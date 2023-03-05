@@ -20,9 +20,6 @@ class ProcessResultHandlerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    private ProcessResultHandler handler;
-
     @Test
     void handlerTest() throws Exception {
 
@@ -35,6 +32,6 @@ class ProcessResultHandlerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name").value("새우"))
                 .andExpect(jsonPath("$.email").value("ksk7584@gmail.com"))
-                .andDo(handler);
+                .andDo(Document.document("member/add/success"));
     }
 }
